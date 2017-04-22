@@ -15,25 +15,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+
 // =============================================================
-var characters = [{
-  routeName: "yoda",
-  name: "Yoda",
-  role: "Jedi Master",
-  age: 900,
-  forcePoints: 2000
+var userInfo = [{
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
 }, {
-  routeName: "darthmaul",
-  name: "Darth Maul",
-  role: "Sith Lord",
-  age: 200,
-  forcePoints: 1200
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
 }, {
-  routeName: "obiwankenobi",
-  name: "Obi Wan Kenobi",
-  role: "Jedi Master",
-  age: 55,
-  forcePoints: 1350
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
 }];
 
 // Routes
@@ -44,29 +45,19 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "view.html"));
 });
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+app.get("/table", function(req, res) {
+  res.sendFile(path.join(__dirname, "table.html"));
+});
+
+
 // Search for Specific Character (or all characters) - provides JSON
-app.get("/api/:characters?", function(req, res) {
-  var chosen = req.params.characters;
-
-  if (chosen) {
-    console.log(chosen);
-
-    for (var i = 0; i < characters.length; i++) {
-      if (chosen === characters[i].routeName) {
-        res.json(characters[i]);
-        return;
-      }
-    }
-
-    res.json(false);
-  }
-  else {
-    res.json(characters);
-  }
+app.get("/api/table", function(req, res) {
+  var chosen = req.params.table;
+    res.json(userInfo);
 });
 
 // Create New Characters - takes in JSON input
