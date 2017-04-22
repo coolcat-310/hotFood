@@ -10,24 +10,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-var characters = [{
-  routeName: "yoda",
-  name: "Yoda",
-  role: "Jedi Master",
-  age: 900,
-  forcePoints: 2000
+
+
+// =============================================================
+var userInfo = [{
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 
 }, {
-  routeName: "darthmaul",
-  name: "Darth Maul",
-  role: "Sith Lord",
-  age: 200,
-  forcePoints: 1200
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
 }, {
-  routeName: "obiwankenobi",
-  name: "Obi Wan Kenobi",
-  role: "Jedi Master",
-  age: 55,
-  forcePoints: 1350
+  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
 }];
 
 app.get("/", function(req, res) {
@@ -38,13 +41,15 @@ app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+
 app.get("/table", function(req, res) {
   res.sendFile(path.join(__dirname, "table.html"));
 });
 
 app.get("/api/table", function(req, res) {
     res.json(characters);
-});
+
+
 
 app.post("/api/new", function(req, res) {
   var newcharacter = req.body;

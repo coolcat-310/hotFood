@@ -1,6 +1,8 @@
 /**
  * Created by juancarlosnavarrete on 4/22/17.
  */
+
+
 $(".submit").on("click", function(){
 
     // Here we grab the form elements
@@ -13,11 +15,24 @@ $(".submit").on("click", function(){
 
     console.log(newReservation);
 
-    $.post("/api/new", newReservation)
-        .done(function(data) {
-            console.log(data);
-            alert("Adding Reservation...");
-        });
 
+    var currentURL = window.location.origin;
+
+    $.post(currentURL + "/api/new", newReservation, function(data) {
+
+        if(data == true){
+            alert("yay! you are officially booked!")
+        }
+        if(data == false) {
+            alert("Sorry, you are on the wait list")
+        }
+
+        $('#reserve_name').val("");
+        $('#reserve_phone').val("");
+        $('#reserve_email').val("");
+        $('#reserve_uniqueID').val("");
+    });
+        
+return false;
 
 });
