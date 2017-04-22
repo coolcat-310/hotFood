@@ -13,7 +13,7 @@ function runTableQuery(){
     var currentURL = window.location.origin;
 
     // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-    $.ajax({url: currentURL + "/api/tables", method: "GET"})
+    $.ajax({url: currentURL + "/api/table", method: "GET"})
         .done(function(tableData) {
 
             // Here we are logging the URL so we have access to it for troubleshooting
