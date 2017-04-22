@@ -48,29 +48,19 @@ app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "tables.html"));
+app.get("/table", function(req, res) {
+  res.sendFile(path.join(__dirname, "table.html"));
 });
 
-// Search for Specific Character (or all characters) - provides JSON
-app.get("/api/:characters?", function(req, res) {
-  var chosen = req.params.characters;
 
-  if (chosen) {
-    console.log(chosen);
+Search for Specific Character (or all characters) - provides JSON
+app.get("/api/table", function(req, res) {
+  // var chosen = req.params.characters;
 
-    for (var i = 0; i < characters.length; i++) {
-      if (chosen === characters[i].routeName) {
-        res.json(characters[i]);
-        return;
-      }
-    }
-
-    res.json(false);
-  }
-  else {
+  
+  
     res.json(characters);
-  }
+  
 });
 
 // Create New Characters - takes in JSON input
