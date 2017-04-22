@@ -15,6 +15,7 @@ $(".submit").on("click", function(){
 
     console.log(newReservation);
 
+
     var currentURL = window.location.origin;
 
     $.post(currentURL + "/api/new", newReservation, function(data) {
