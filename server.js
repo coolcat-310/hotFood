@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static('assests'));
 
 
 
@@ -50,14 +51,14 @@ app.get("/api/table", function(req, res) {
 
 
 app.post("/api/new", function(req, res) {
-  var newcharacter = req.body;
-  newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+  var newCustmer = req.body;
 
-  console.log(newcharacter);
 
-  characters.push(newcharacter);
+  console.log(newCustmer);
 
-  res.json(newcharacter);
+  userInfo.push(newCustmer);
+
+  res.json(newCustmer);
 });
 
 app.listen(PORT, function() {
