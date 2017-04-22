@@ -52,15 +52,8 @@ app.get("/table", function(req, res) {
   res.sendFile(path.join(__dirname, "table.html"));
 });
 
-
-Search for Specific Character (or all characters) - provides JSON
 app.get("/api/table", function(req, res) {
-  // var chosen = req.params.characters;
-
-  
-  
     res.json(characters);
-  
 });
 
 // Create New Characters - takes in JSON input
