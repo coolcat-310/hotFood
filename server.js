@@ -14,19 +14,16 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // =============================================================
 var userInfo = [{
-  routeName: "Marcos",
-  name: "Marcos",
-  phoneNumber: "123-334-5551",
-  email: "hellow@hehe.com",
-  uniqueId: 
-}, {
-  routeName: "Marcos",
   name: "Marcos",
   phoneNumber: "123-334-5551",
   email: "hellow@hehe.com",
   uniqueId: 1
 }, {
-  routeName: "Marcos",
+  name: "Marcos",
+  phoneNumber: "123-334-5551",
+  email: "hellow@hehe.com",
+  uniqueId: 1
+}, {
   name: "Marcos",
   phoneNumber: "123-334-5551",
   email: "hellow@hehe.com",
@@ -48,6 +45,7 @@ app.get("/table", function(req, res) {
 
 app.get("/api/table", function(req, res) {
     res.json(characters);
+  });
 
 
 
