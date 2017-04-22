@@ -18,8 +18,9 @@ $(".submit").on("click", function(){
 
     var currentURL = window.location.origin;
 
-    $.post(currentURL + "/api/new", newReservation, function(data) {
 
+    $.post("api/new", newReservation, function(data) {
+        console.log(currentURL + "api/new");
         if(data == true){
             alert("yay! you are officially booked!")
         }
