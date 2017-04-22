@@ -38,7 +38,7 @@ function runTableQuery(){
 
 
                 // Then display the remaining fields in the HTML (Section Name, Date, URL)
-                $("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerID + "</h2>");
+                $("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerName + "</h2>");
             }
         });
 }

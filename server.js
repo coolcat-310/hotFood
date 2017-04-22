@@ -15,20 +15,20 @@ app.use(express.static('assests'));
 
 // =============================================================
 var userInfo = [{
-  name: "Marcos",
+  customerName: "Marcos",
   phoneNumber: "123-334-5551",
-  email: "hellow@hehe.com",
-  uniqueId: 1
+  customerEmail: "hellow@hehe.com",
+  customerID: 1
 }, {
-  name: "Marcos",
+    customerName: "Julia",
   phoneNumber: "123-334-5551",
-  email: "hellow@hehe.com",
-  uniqueId: 1
+    customerEmail: "hellow@hehe.com",
+  customerID: 2
 }, {
-  name: "Marcos",
+    customerName: "Mai",
   phoneNumber: "123-334-5551",
-  email: "hellow@hehe.com",
-  uniqueId: 1
+    customerEmail: "hellow@hehe.com",
+  uniqueID: 3
 }];
 
 app.get("/", function(req, res) {
